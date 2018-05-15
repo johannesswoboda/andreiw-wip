@@ -303,8 +303,8 @@ class ReloadUefi (gdb.Command):
         est = est.cast (est_t)
         print ("Connected to %s (Rev. 0x%x)" % \
             (self.parse_utf16 (est['FirmwareVendor']), \
-                 int(est['FirmwareRevision'])))
-        print ("ConfigurationTable @ 0x%x, 0x%x entries" \
+            int(est['FirmwareRevision'])))
+            print ("ConfigurationTable @ 0x%x, 0x%x entries" \
             % (int(est['ConfigurationTable']), est['NumberOfTableEntries']))
 
         dh = self.search_config(est['ConfigurationTable'],
@@ -352,5 +352,3 @@ class ReloadUefi (gdb.Command):
         self.parse_est (est)
 
 ReloadUefi ()
-
-
